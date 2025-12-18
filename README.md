@@ -13,6 +13,6 @@ KROK 2: Wklejenie Kodu (Workflow)
 1. Wróć do zakładki Code (główna strona repozytorium).
 2. Kliknij Add file -> Create new file.
 3. W polu nazwy pliku wpisz: .github/workflows/discord-bot.yml
-4. Wklej poniższy kod w całości (zastąp wszystko, co tam ewentualnie masz):
+4. Wklej kod z pliku ```discord-bot.yml``` w całości (zastąp wszystko, co tam ewentualnie masz):
 5. Kliknij przycisk Commit changes... (w prawym górnym rogu).
 6. Wpisz wiadomość (np. "Naprawa bota") i kliknij Commit changes.
