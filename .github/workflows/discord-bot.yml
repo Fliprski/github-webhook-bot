@@ -21,15 +21,19 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      # 1. Pobieramy kod repozytorium (żeby mieć dostęp do pliku .js)
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2. Uruchamiamy skrypt Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
       - name: Run Discord Bot Script
         run: node .github/scripts/discord-bot.js
         env:
-          # Przekazujemy sekret do skryptu
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          # Przekazujemy dane zdarzenia (to robi się automatycznie, ale warto wiedzieć)
-          GITHUB_EVENT_PATH: ${{ github.event_path }}
